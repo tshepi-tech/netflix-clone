@@ -1,5 +1,5 @@
 //NPM packages
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 //Project files
 import Categories from "Admin/pages/Categories";
