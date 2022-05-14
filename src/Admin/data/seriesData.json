@@ -1,0 +1,64 @@
+[
+  {
+    "key": "title",
+    "autofocus": true,
+    "label": "Title",
+    "placeholder": "Stranger Things",
+    "required": true,
+    "type": "text"
+  },
+  {
+    "key": "text",
+    "autofocus": true,
+    "label": "Description",
+    "placeholder": "One of the best shows of Netflix",
+    "required": true,
+    "type": "text"
+  },
+  {
+    "key": "cast",
+    "autofocus": true,
+    "label": "Cast",
+    "placeholder": "Lupita Nyango,Viola Davis",
+    "required": true,
+    "type": "text"
+  },
+  {
+    "key": "genre",
+    "autofocus": true,
+    "label": "Genre",
+    "placeholder": "Thriller",
+    "required": true,
+    "type": "text"
+  },
+  {
+    "key": "age",
+    "autofocus": true,
+    "label": "Age",
+    "placeholder": "13+",
+    "required": true,
+    "type": "text"
+  },
+  {
+    "key": "theme",
+    "autofocus": true,
+    "label": "Theme",
+    "placeholder": "Dark,Witty",
+    "required": true,
+    "type": "text"
+  },
+  {
+    "key": "HD",
+    "autofocus": false,
+    "label": "HD",
+    "required": true,
+    "type": "checkbox"
+  },
+  {
+    "key": "AD",
+    "autofocus": false,
+    "label": "AD",
+    "required": true,
+    "type": "checkbox"
+  }
+]
