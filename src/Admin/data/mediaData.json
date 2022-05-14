@@ -1,0 +1,26 @@
+[
+  {
+    "key": "tumbnail",
+    "autofocus": true,
+    "label": "Thumnail",
+    "placeholder": "upload tumbnail",
+    "required": true,
+    "type": "file"
+  },
+  {
+    "key": "logo",
+    "autofocus": true,
+    "label": "Logo",
+    "placeholder": "upload logo",
+    "required": true,
+    "type": "file"
+  },
+  {
+    "key": "image",
+    "autofocus": true,
+    "label": "Image",
+    "placeholder": "upload the main image",
+    "required": true,
+    "type": "file"
+  }
+]
