@@ -1,7 +1,15 @@
+//NPM packages
+import { BrowserRouter } from "react-router-dom";
+
+//Project files
+import AdminRoute from "Routes/AdminRoute";
+
 export default function App() {
   return (
     <div className="App">
-      <h1>Tshepi's app</h1>
+      <BrowserRouter>
+        <AdminRoute />
+      </BrowserRouter>
     </div>
   );
 }
