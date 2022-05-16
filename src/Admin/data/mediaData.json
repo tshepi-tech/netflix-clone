@@ -4,7 +4,7 @@
     "autofocus": true,
     "label": "Thumnail",
     "placeholder": "upload tumbnail",
-    "required": true,
+    "required": false,
     "type": "file"
   },
   {
@@ -12,7 +12,7 @@
     "autofocus": true,
     "label": "Logo",
     "placeholder": "upload logo",
-    "required": true,
+    "required": false,
     "type": "file"
   },
   {
@@ -20,7 +20,7 @@
     "autofocus": true,
     "label": "Image",
     "placeholder": "upload the main image",
-    "required": true,
+    "required": false,
     "type": "file"
   }
 ]

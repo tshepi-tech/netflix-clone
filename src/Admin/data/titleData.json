@@ -1,8 +1,8 @@
 [
   {
-    "key": "title",
+    "key": "name",
     "autofocus": true,
-    "label": "Title",
+    "label": "Name",
     "placeholder": "Stranger Things",
     "required": true,
     "type": "text"
@@ -59,14 +59,14 @@
     "key": "HD",
     "autofocus": false,
     "label": "HD",
-    "required": true,
+    "required": false,
     "type": "checkbox"
   },
   {
     "key": "AD",
     "autofocus": false,
     "label": "AD",
-    "required": true,
+    "required": false,
     "type": "checkbox"
   }
 ]

@@ -2,23 +2,50 @@
 import { useState } from "react";
 
 //Project files
+import { createDocumentWithId } from "scripts/firestore";
+import { firestore } from "scripts/firebase";
+import { readDocument } from "scripts/firestore";
+import textToURL from "scripts/textToURL";
+import { useTitle } from "state/TitleContext";
 import InputTitle from "./InputTitle";
 import InputMedia from "./InputMedia";
 import { useModal } from "state/ModalContext";
 
-export default function CreateTitle({ titleData, mediaData }) {
+export default function CreateTitle({ titleData, mediaData, path }) {
   //Global state
   const { setModal } = useModal();
+  const { addTitle } = useTitle();
   // Local state
   const [form, setForm] = useState({});
+  const [form1, setForm1] = useState({});
 
   async function onSubmit(event) {
     event.preventDefault();
-    resetForm();
+
+    const id = textToURL(form.name);
+    const existingDocument = await readDocument(path, id).catch(onFail);
+
+    //Safeguard
+    if (existingDocument !== undefined) {
+      alert(`An item with the name ${form.name} already exist`);
+      return;
+    }
+
+    const done = await createDocumentWithId(path, id, form).catch(onFail);
+
+    if (done) onSuccess(form, id);
   }
 
-  function resetForm() {
+  function onSuccess(title, id) {
+    title.id = id;
+    addTitle(title);
     setModal(null);
+    alert(`${form.name} added`);
+  }
+
+  function onFail(error) {
+    console.error(error);
+    alert("Could not create `${form.name}` title");
   }
 
   // Components
@@ -26,7 +53,7 @@ export default function CreateTitle({ titleData, mediaData }) {
     <InputTitle key={item.key} setup={item} state={[form, setForm]} />
   ));
   const InputImages = mediaData.map((item) => (
-    <InputMedia key={item.key} setup={item} state={[form, setForm]} />
+    <InputMedia key={item.key} setup={item} state={[form1, setForm1]} />
   ));
 
   return (
@@ -35,9 +62,48 @@ export default function CreateTitle({ titleData, mediaData }) {
       {InputFields}
       {InputImages}
       <button className="button primary">Submit</button>
-      <button className="button secondary" onClick={resetForm}>
+      <button
+        className="button secondary"
+        onClick={() => {
+          setModal(null);
+        }}
+      >
         Cancel
       </button>
     </form>
   );
 }
+
+/* const title = {
+  name: name,
+  text: text,
+  cast: cast,
+  genre: genre,
+  age: age,
+  theme: theme,
+  URL: URL,
+  HD: HD,
+  AD: AD,
+  thumbnail: thumbnail,
+  logo: logo,
+  image: image,
+}; */
+
+/* const [titles, setTitles] = useState({});
+
+  const [name, setName] = useState("Mudbound");
+  const [text, setText] = useState(
+    "Two Mississippi famailies--confront the brutal realiteies of prejuidice,farming and friendship"
+  );
+  const [cast, setCast] = useState("Mary J.Blige,Jason Clarke");
+  const [genre, setGenre] = useState(
+    "Social Issue Drama,Movies Based on Books"
+  );
+  const [age, setAge] = useState("16+");
+  const [theme, setTheme] = useState("Initmate,Emotional");
+  const [URL, setURL] = useState("https://www.youtube.com/watch?v=vAZWhFI9lLQ");
+  const [HD, setHD] = useState(true);
+  const [AD, setAD] = useState(false);
+  const [thumbnail, setThumbnail] = useState("");
+  const [logo, setLogo] = useState("");
+  const [image, setImage] = useState(""); */

@@ -1,8 +1,8 @@
 [
   {
-    "key": "title",
+    "key": "name",
     "autofocus": true,
-    "label": "Title",
+    "label": "Name",
     "placeholder": "Stranger Things",
     "required": true,
     "type": "text"
