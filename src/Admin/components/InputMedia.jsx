@@ -5,30 +5,52 @@ import { useState } from "react";
 import resizeImage from "scripts/ModifyImage/resizeImage";
 import readFile from "scripts/ModifyImage/readFile";
 
-export default function InputMedia({ setup, state }) {
-  const { key, autoFocus, label, placeholder, type, required } = setup;
-  const [value, setValue] = state; // is now an object not an string
-  const [file, setFile] = useState(null);
+export default function InputMedia() {
+  const [thumbnail, setThumbnail] = useState(null);
+  const [image, setImage] = useState(null);
+  const [logo, setLogo] = useState(null);
 
   // Methods
+  async function onThumbnailSelect(event) {
+    const file = event.target.files[0];
+    const imageImage = await readFile(file);
+    const resizedImage = await resizeImage(imageImage, 250, 250);
+
+    setThumbnail(resizedImage);
+  }
   async function onImageSelect(event) {
     const file = event.target.files[0];
     const imageImage = await readFile(file);
     const resizedImage = await resizeImage(imageImage, 250, 250);
 
-    setFile(resizedImage);
+    setImage(resizedImage);
+  }
+  async function onLogoSelect(event) {
+    const file = event.target.files[0];
+    const imageImage = await readFile(file);
+    const resizedImage = await resizeImage(imageImage, 250, 250);
+
+    setLogo(resizedImage);
   }
 
   return (
     <label className="input-field">
-      <div>{label}:</div>
+      <div>Thumbnail:</div>
       <input
-        autoFocus={autoFocus}
+        type="file"
+        onChange={onThumbnailSelect}
+        accept="image/png image/jpg "
+      />
+      <div>Image:</div>
+      <input
+        type="file"
         onChange={onImageSelect}
-        placeholder={placeholder}
-        required={required}
-        type={type}
-        value={value[key]}
+        accept="image/png image/jpg "
+      />
+      <div>Logo:</div>
+      <input
+        type="file"
+        onChange={onLogoSelect}
         accept="image/png image/jpg "
       />
     </label>
