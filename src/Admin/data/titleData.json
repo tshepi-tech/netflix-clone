@@ -16,6 +16,14 @@
     "type": "text"
   },
   {
+    "key": "year",
+    "autofocus": true,
+    "label": "Year",
+    "placeholder": "2020",
+    "required": true,
+    "type": "year"
+  },
+  {
     "key": "cast",
     "autofocus": true,
     "label": "Cast",

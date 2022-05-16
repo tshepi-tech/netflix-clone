@@ -3,7 +3,7 @@ import { useState } from "react";
 
 //Project files
 import { createDocumentWithId } from "scripts/firestore";
-import { firestore } from "scripts/firebase";
+import { createFile } from "scripts/cloudStorage";
 import { readDocument } from "scripts/firestore";
 import textToURL from "scripts/textToURL";
 import { useTitle } from "state/TitleContext";
@@ -18,9 +18,16 @@ export default function CreateTitle({ titleData, mediaData, path }) {
   // Local state
   const [form, setForm] = useState({});
   const [form1, setForm1] = useState({});
+  const [file, setFile] = useState(null);
 
   async function onSubmit(event) {
     event.preventDefault();
+
+    const fileName = `title-${form.name}-${form.year}.png`;
+    const filePath = path + fileName;
+    const imageURL = await createFile(filePath, file);
+
+    form.imageURL = imageURL;
 
     const id = textToURL(form.name);
     const existingDocument = await readDocument(path, id).catch(onFail);
