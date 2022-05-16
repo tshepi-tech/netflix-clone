@@ -5,7 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import Categories from "Admin/pages/Categories";
 import DocumentaryAdmin from "Admin/pages/DocumentaryAdmin";
 import EpisodesAdmin from "Admin/pages/EpisodesAdmin";
-import MoviesAdmin from "Admin/pages/MoviesAdmin";
+import MoviesAdmin from "Admin/pages/TitlesAdmin";
 import SeasonsAdmin from "Admin/pages/SeasonsAdmin";
 import SeriesAdmin from "Admin/pages/SeriesAdmin";
 

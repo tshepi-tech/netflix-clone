@@ -74,23 +74,7 @@ export default function CreateTitle({ titleData, mediaData, path }) {
   );
 }
 
-/* const title = {
-  name: name,
-  text: text,
-  cast: cast,
-  genre: genre,
-  age: age,
-  theme: theme,
-  URL: URL,
-  HD: HD,
-  AD: AD,
-  thumbnail: thumbnail,
-  logo: logo,
-  image: image,
-}; */
-
-/* const [titles, setTitles] = useState({});
-
+/* 
   const [name, setName] = useState("Mudbound");
   const [text, setText] = useState(
     "Two Mississippi famailies--confront the brutal realiteies of prejuidice,farming and friendship"

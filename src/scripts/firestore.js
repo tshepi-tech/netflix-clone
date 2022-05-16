@@ -24,14 +24,14 @@ export async function addDocument(path, data) {
 
 //--read
 
-export async function getDocument(path, id) {
+export async function readDocument(path, id) {
   const documentPath = doc(firestore, path, id);
   const document = await getDoc(documentPath);
 
   return document.data();
 }
 
-export async function getCollection(path) {
+export async function readCollection(path) {
   const collectionPath = collection(firestore, path); // firebase-fe2/firestore/drivers
   const snapshot = await getDocs(collectionPath);
   const documents = snapshot.docs.map((item) => {
