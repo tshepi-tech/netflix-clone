@@ -8,7 +8,7 @@ export default function Categories() {
       <br></br>
       <Link to="movies">movies</Link>
       <br></br>
-      <Link to="/series">series</Link>
+      <Link to="series">series</Link>
     </div>
   );
 }

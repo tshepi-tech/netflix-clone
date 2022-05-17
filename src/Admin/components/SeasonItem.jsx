@@ -6,16 +6,15 @@ import { useModal } from "state/ModalContext";
 import DeleteTitle from "Admin/components/DeleteTitle";
 import UpdateTitle from "Admin/components/UpdateTitle";
 
-export default function SeriesItem({ title, path }) {
-  const { categoryId } = useParams();
+export default function SeriesItem({ title, path, season }) {
   //Global state
   const { setModal } = useModal();
   //Properties
-  const seasonManger = `/series/${title.id}`;
+  const espisodesManger = `/series/${title}/${season}`;
 
   return (
     <article>
-      <p>{title.name}</p>
+      <p>season :{season.season}</p>
       <button
         onClick={() => setModal(<UpdateTitle title={title} path={path} />)}
       >
@@ -26,8 +25,8 @@ export default function SeriesItem({ title, path }) {
       >
         🗑
       </button>
-      <Link to={seasonManger}>
-        <button>Season</button>
+      <Link to={espisodesManger}>
+        <button>Episodes</button>
       </Link>
     </article>
   );

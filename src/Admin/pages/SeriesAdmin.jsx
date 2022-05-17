@@ -11,7 +11,7 @@ import SeriesItem from "Admin/components/SeriesItem";
 import { useModal } from "state/ModalContext";
 import { useTitle } from "state/TitleContext";
 
-export default function DocumentaryAdmin() {
+export default function SeriesAdmin() {
   const { categoryId } = useParams();
   //Global state
   const { setModal } = useModal();

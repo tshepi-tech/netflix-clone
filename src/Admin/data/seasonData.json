@@ -1,8 +1,9 @@
-{
-  "season": {
+[
+  {
+    "key": "season",
     "label": "Season number",
     "placeholder": "write the season number ex.2",
     "type": "number",
     "required": true
   }
-}
+]
