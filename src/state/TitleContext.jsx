@@ -9,13 +9,24 @@ const Context = createContext(null);
 export function TitleProvider({ children }) {
   // Local state
   const [titles, setTitles] = useState([]);
-
+  const [seasons, setSeasons] = useState([]);
   // Properties
-  const value = { titles, setTitles, addTitle };
+  const value = {
+    titles,
+    setTitles,
+    addTitle,
+    seasons,
+    setSeasons,
+    addSeasons,
+  };
 
   // Methods
   function addTitle(newTitle) {
     setTitles([...titles, newTitle]);
+  }
+
+  function addSeasons(newSeason) {
+    setTitles([...seasons, newSeason]);
   }
 
   function editItem(editedItem) {

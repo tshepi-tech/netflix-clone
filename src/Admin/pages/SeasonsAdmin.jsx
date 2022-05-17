@@ -17,10 +17,11 @@ export default function SeasonsAdmin() {
   const { seriesId } = useParams();
   //Global state
   const { setModal } = useModal();
+  const { seasons, setSeasons } = useTitle();
 
   //Local state
   const [status, setStatus] = useState(0); // 0: loading, 1: loaded, 2: error
-  const [seasons, setSeasons] = useState([]);
+
   //Properties
   const path = `netflix/series/content/${seriesId}/content`;
   const createSeasons = <CreateSeason titleData={titleData} path={path} />;

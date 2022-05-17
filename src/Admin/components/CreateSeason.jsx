@@ -12,7 +12,7 @@ import { useModal } from "state/ModalContext";
 export default function CreateTitle({ titleData, path }) {
   //Global state
   const { setModal } = useModal();
-  const { addTitle } = useTitle();
+  const { addSeasons } = useTitle();
   // Local state
   const [form, setForm] = useState({});
 
@@ -31,9 +31,9 @@ export default function CreateTitle({ titleData, path }) {
     if (done) onSuccess(form, id);
   }
 
-  function onSuccess(title, id) {
-    title.id = id;
-    addTitle(title);
+  function onSuccess(season, id) {
+    season.id = id;
+    addSeasons(season);
     setModal(null);
     alert(`${form.season} added`);
   }
@@ -50,7 +50,7 @@ export default function CreateTitle({ titleData, path }) {
 
   return (
     <form className="form" onSubmit={onSubmit}>
-      <h2>Create Title</h2>
+      <h2>Create Season</h2>
       {InputFields}
       <button className="button primary">Submit</button>
       <button
