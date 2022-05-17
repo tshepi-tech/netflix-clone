@@ -54,4 +54,5 @@ export async function deleteDocument(path, id) {
   const documentPath = doc(firestore, path, id);
 
   await deleteDoc(documentPath);
+  return "document deleted";
 }

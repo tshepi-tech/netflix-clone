@@ -1,0 +1,8 @@
+{
+  "compare": {
+    "label": "Write the name of the item",
+    "placeholder": "Type the exact name",
+    "type": "text",
+    "required": true
+  }
+}
