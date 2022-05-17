@@ -19,7 +19,7 @@ export default function App() {
         <div className="App">
           <Routes>
             <Route path="categories" element={<Categories />} />
-            <Route path="series" element={<SeriesAdmin />} />
+            <Route path="categories/series" element={<SeriesAdmin />} />
             <Route path="categories/:categoryId" element={<TitlesAdmin />} />
             <Route path="series/:seriesId" element={<SeasonsAdmin />} />
             <Route
