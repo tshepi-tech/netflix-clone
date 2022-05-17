@@ -2,12 +2,11 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 //Project files
-import CreateSeries from "Admin/components/CreateSeries";
 import CreateTitle from "Admin/components/CreateTitle";
 import { readCollection } from "scripts/firestore";
 import mediaData from "Admin/data/mediaData";
 import Placeholder from "Admin/pages/Placeholder";
-import seriesData from "Admin/data/seriesData";
+import titleData from "Admin/data/seriesData";
 import SeriesItem from "Admin/components/SeriesItem";
 import { useModal } from "state/ModalContext";
 import { useTitle } from "state/TitleContext";
@@ -24,7 +23,7 @@ export default function DocumentaryAdmin() {
   //Properties
   const path = `netflix/${categoryId}/content`;
   const createSeries = (
-    <CreateSeries seriesData={seriesData} mediaData={mediaData} path={path} />
+    <CreateTitle titleData={titleData} mediaData={mediaData} path={path} />
   );
 
   // Method
