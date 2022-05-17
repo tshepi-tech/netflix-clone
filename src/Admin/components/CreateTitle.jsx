@@ -11,7 +11,7 @@ import InputTitle from "./InputTitle";
 import InputMedia from "./InputMedia";
 import { useModal } from "state/ModalContext";
 
-export default function CreateTitle({ titleData, mediaData, path }) {
+export default function CreateTitle({ titleData, path }) {
   //Global state
   const { setModal } = useModal();
   const { addTitle } = useTitle();
