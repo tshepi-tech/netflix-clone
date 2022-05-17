@@ -23,7 +23,7 @@ export default function App() {
             <Route path="categories/:categoryId" element={<TitlesAdmin />} />
             <Route path="series/:seriesId" element={<SeasonsAdmin />} />
             <Route
-              path="categories/:seriesId/:seasonId"
+              path="series/:seriesId/:seasonId"
               element={<EpisodesAdmin />}
             />
           </Routes>

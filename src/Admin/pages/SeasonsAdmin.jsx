@@ -48,7 +48,12 @@ export default function SeasonsAdmin() {
 
   //Components
   const seasonsList = seasons.map((season) => (
-    <SeasonItem key={season.id} season={season} path={path} />
+    <SeasonItem
+      key={season.id}
+      season={season}
+      path={path}
+      seriesId={seriesId}
+    />
   ));
 
   // Safeguards

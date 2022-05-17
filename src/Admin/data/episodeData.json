@@ -1,0 +1,34 @@
+[
+  {
+    "key": "number",
+    "autofocus": true,
+    "label": "episode number",
+    "placeholder": "3",
+    "required": true,
+    "type": "number"
+  },
+  {
+    "key": "name",
+    "autofocus": true,
+    "label": "Name",
+    "placeholder": "Lies and love",
+    "required": true,
+    "type": "text"
+  },
+  {
+    "key": "text",
+    "autofocus": true,
+    "label": "Description",
+    "placeholder": "One of the best shows of Netflix",
+    "required": true,
+    "type": "text"
+  },
+  {
+    "key": "URL",
+    "autofocus": true,
+    "label": "URL",
+    "placeholder": "https://www.youtube.com/watch?v=NZrX_ES93JA",
+    "required": true,
+    "type": "url"
+  }
+]
