@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 //Project Files
 import { useModal } from "state/ModalContext";
-import DeleteTitle from "Admin/components/DeleteTitle";
+import DeleteSeason from "Admin/components/DeleteSeason";
 import UpdateTitle from "Admin/components/UpdateTitle";
 
 export default function SeriesItem({ title, path, season }) {
@@ -16,12 +16,16 @@ export default function SeriesItem({ title, path, season }) {
     <article>
       <p>season :{season.season}</p>
       <button
-        onClick={() => setModal(<UpdateTitle title={title} path={path} />)}
+        onClick={() =>
+          setModal(<UpdateTitle title={title} path={path} season={season} />)
+        }
       >
         ✍️
       </button>
       <button
-        onClick={() => setModal(<DeleteTitle title={title} path={path} />)}
+        onClick={() =>
+          setModal(<DeleteSeason title={title} path={path} season={season} />)
+        }
       >
         🗑
       </button>
