@@ -13,8 +13,9 @@ export async function createFile(filePath, file) {
   return await getDownloadURL(fileReference); //getting URL
 }
 
-//--Update(replace)
-export async function updateFile() {}
+// -- Delete
+export async function deleteFile(filePath) {
+  const fileReference = ref(cloudStorage, filePath);
 
-//--Delete
-export async function deleteFile() {}
+  await deleteObject(fileReference);
+}

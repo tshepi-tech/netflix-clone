@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { useState } from "react";
 
 //Project files
+import { deleteFile } from "scripts/cloudStorage";
 import { deleteDocument } from "scripts/firestore";
 import formDelete from "Admin/data/formDelete.json";
 import InputField from "AppComponents/InputField";
@@ -17,7 +18,7 @@ export default function DeleteTitle({ title, path }) {
 
   //Local state
   const [compare, setCompare] = useState("");
-
+  const [form, setForm] = useState({});
   //Methods
   async function onSubmit(event) {
     event.preventDefault();
