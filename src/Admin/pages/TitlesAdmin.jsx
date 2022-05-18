@@ -48,7 +48,7 @@ export default function MoviesAdmin() {
 
   //Components
   const titlesList = titles.map((title) => (
-    <TitleItem key={title.id} title={title} path={path} />
+    <TitleItem key={title.id} title={title} path={path} titleData={titleData} />
   ));
 
   // Safeguards

@@ -47,7 +47,12 @@ export default function SeriesAdmin() {
 
   //Components
   const titlesList = titles.map((title) => (
-    <SeriesItem key={title.id} title={title} path={path} />
+    <SeriesItem
+      key={title.id}
+      title={title}
+      path={path}
+      titleData={titleData}
+    />
   ));
 
   // Safeguards

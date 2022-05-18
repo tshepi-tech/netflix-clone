@@ -53,6 +53,7 @@ export default function SeasonsAdmin() {
       season={season}
       path={path}
       seriesId={seriesId}
+      titleData={titleData}
     />
   ));
 

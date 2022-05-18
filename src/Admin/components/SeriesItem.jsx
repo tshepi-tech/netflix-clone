@@ -6,7 +6,7 @@ import { useModal } from "state/ModalContext";
 import DeleteTitle from "Admin/components/DeleteTitle";
 import UpdateTitle from "Admin/components/UpdateTitle";
 
-export default function SeriesItem({ title, path }) {
+export default function SeriesItem({ title, path, titleData }) {
   const { categoryId } = useParams();
   //Global state
   const { setModal } = useModal();
@@ -17,7 +17,11 @@ export default function SeriesItem({ title, path }) {
     <article>
       <p>{title.name}</p>
       <button
-        onClick={() => setModal(<UpdateTitle title={title} path={path} />)}
+        onClick={() =>
+          setModal(
+            <UpdateTitle title={title} path={path} titleData={titleData} />
+          )
+        }
       >
         ✍️
       </button>

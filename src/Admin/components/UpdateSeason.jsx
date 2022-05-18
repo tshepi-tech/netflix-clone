@@ -8,19 +8,19 @@ import { useTitle } from "state/TitleContext";
 import { useModal } from "state/ModalContext";
 import InputMedia from "./InputMedia";
 
-export default function UpdateTitle({ path, titleData, title }) {
+export default function UpdateSeason({ path, titleData, season }) {
   // Global state
   const { editItem } = useTitle();
   const { setModal } = useModal();
 
   // Local state
-  const [form, setForm] = useState(generateFields(titleData, title));
+  const [form, setForm] = useState(generateFields(titleData, season));
 
   // Methods
   async function onSubmit(event) {
     event.preventDefault();
 
-    const editedItem = { ...form, id: title.id };
+    const editedItem = { ...form, id: season.id };
     const isDone = await updateDocument(path, editedItem).catch(onFail);
 
     if (isDone) onSucess(editedItem);
@@ -57,7 +57,7 @@ export default function UpdateTitle({ path, titleData, title }) {
     <form className="form" onSubmit={onSubmit}>
       <h2>Edit item</h2>
       {InputFields}
-      <InputMedia />
+
       <button className="button primary">Edit existing item</button>
       <button className="button secondary" onClick={() => setModal(null)}>
         Cancel editing

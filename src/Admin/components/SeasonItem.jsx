@@ -4,9 +4,9 @@ import { Link, useParams } from "react-router-dom";
 //Project Files
 import { useModal } from "state/ModalContext";
 import DeleteSeason from "Admin/components/DeleteSeason";
-import UpdateTitle from "Admin/components/UpdateTitle";
+import UpdateSeason from "./UpdateSeason";
 
-export default function SeriesItem({ seriesId, path, season }) {
+export default function SeriesItem({ seriesId, path, season, titleData }) {
   //Global state
   const { setModal } = useModal();
 
@@ -19,7 +19,12 @@ export default function SeriesItem({ seriesId, path, season }) {
       <button
         onClick={() =>
           setModal(
-            <UpdateTitle seriesId={seriesId} path={path} season={season} />
+            <UpdateSeason
+              seriesId={seriesId}
+              path={path}
+              season={season}
+              titleData={titleData}
+            />
           )
         }
       >
