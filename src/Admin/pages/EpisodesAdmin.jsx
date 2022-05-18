@@ -13,7 +13,7 @@ import { useModal } from "state/ModalContext";
 import { useTitle } from "state/TitleContext";
 
 export default function EpisodesAdmin() {
-  const { seasonId } = useParams();
+  const { seriesId, seasonId } = useParams();
   //Global state
   const { setModal } = useModal();
   const { titles, setTitles } = useTitle();
@@ -22,7 +22,7 @@ export default function EpisodesAdmin() {
   const [status, setStatus] = useState(0); // 0: loading, 1: loaded, 2: error
 
   //Properties
-  const path = `netflix/series/content/series1/content/${seasonId}/content`;
+  const path = `netflix/series/content/${seriesId}/content/${seasonId}/content`;
   const createEpisode = (
     <CreateTitle titleData={titleData} mediaData={mediaData} path={path} />
   );
@@ -57,7 +57,9 @@ export default function EpisodesAdmin() {
 
   return (
     <div>
-      <h2>Season :{seasonId}</h2>
+      <h2>
+        {seriesId} Season :{seasonId}
+      </h2>
       <div className="grid">
         {titles.length === 0 && <Placeholder />}
         {titles.length > 0 && titlesList}
