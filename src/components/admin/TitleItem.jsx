@@ -1,7 +1,7 @@
 //Project Files
 import { useModal } from "state/ModalContext";
-import DeleteTitle from "Admin/components/DeleteTitle";
-import UpdateTitle from "Admin/components/UpdateTitle";
+import DeleteTitle from "components/admin/DeleteTitle";
+import UpdateTitle from "components/admin/UpdateTitle";
 
 export default function TitleItem({ title, path, titleData }) {
   //Global state

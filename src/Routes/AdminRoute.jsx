@@ -2,7 +2,7 @@
 import { Routes, Route } from "react-router-dom";
 
 //Project files
-import Categories from "Admin/pages/Categories";
+import Categories from "pages/admin/Categories";
 import DocumentaryAdmin from "Admin/pages/DocumentaryAdmin";
 import EpisodesAdmin from "Admin/pages/EpisodesAdmin";
 import MoviesAdmin from "Admin/pages/TitlesAdmin";

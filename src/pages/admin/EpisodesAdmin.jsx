@@ -3,12 +3,12 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 //Project files
-import CreateTitle from "Admin/components/CreateTitle";
+import CreateTitle from "components/admin/CreateTitle";
 import { readCollection } from "scripts/firestore";
-import mediaData from "Admin/data/mediaData";
-import Placeholder from "Admin/pages/Placeholder";
-import TitleItem from "Admin/components/TitleItem";
-import titleData from "Admin/data/episodeData";
+import mediaData from "data/admin/mediaData";
+import Placeholder from "pages/admin/Placeholder";
+import TitleItem from "components/admin/TitleItem";
+import titleData from "data/admin/episodeData";
 import { useModal } from "state/ModalContext";
 import { useTitle } from "state/TitleContext";
 

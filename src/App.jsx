@@ -2,13 +2,13 @@
 import { Route, Routes } from "react-router-dom";
 
 //Project files
-import Categories from "Admin/pages/Categories";
-import EpisodesAdmin from "Admin/pages/EpisodesAdmin";
-import Modal from "AppComponents/Modal";
+import Categories from "pages/admin/Categories";
+import EpisodesAdmin from "pages/admin/EpisodesAdmin";
+import Modal from "components/app/Modal";
 import { ModalProvider } from "state/ModalContext";
-import TitlesAdmin from "Admin/pages/TitlesAdmin";
-import SeasonsAdmin from "Admin/pages/SeasonsAdmin";
-import SeriesAdmin from "Admin/pages/SeriesAdmin";
+import TitlesAdmin from "pages/admin/TitlesAdmin";
+import SeasonsAdmin from "pages/admin/SeasonsAdmin";
+import SeriesAdmin from "pages/admin/SeriesAdmin";
 import "styles/styles.css";
 import { TitleProvider } from "state/TitleContext";
 

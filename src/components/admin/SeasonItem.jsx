@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 //Project Files
 import { useModal } from "state/ModalContext";
-import DeleteSeason from "Admin/components/DeleteSeason";
+import DeleteSeason from "components/admin/DeleteSeason";
 import UpdateSeason from "./UpdateSeason";
 
 export default function SeriesItem({ seriesId, path, season, titleData }) {

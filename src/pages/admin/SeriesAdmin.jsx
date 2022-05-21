@@ -1,19 +1,17 @@
 //NPM package
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-
 //Project files
-import CreateTitle from "Admin/components/CreateTitle";
+import CreateTitle from "components/admin/CreateTitle";
 import { readCollection } from "scripts/firestore";
-import mediaData from "Admin/data/mediaData";
-import Placeholder from "Admin/pages/Placeholder";
-import TitleItem from "Admin/components/TitleItem";
-import titleData from "Admin/data/titleData";
+import mediaData from "data/admin/mediaData";
+import Placeholder from "pages/admin/Placeholder";
+import titleData from "data/admin/seriesData";
+import SeriesItem from "components/admin/SeriesItem";
 import { useModal } from "state/ModalContext";
 import { useTitle } from "state/TitleContext";
 
-export default function MoviesAdmin() {
-  const { categoryId } = useParams();
+export default function SeriesAdmin() {
   //Global state
   const { setModal } = useModal();
   const { titles, setTitles } = useTitle();
@@ -22,10 +20,11 @@ export default function MoviesAdmin() {
   const [status, setStatus] = useState(0); // 0: loading, 1: loaded, 2: error
 
   //Properties
-  const path = `netflix/${categoryId}/content`;
-  const createMovies = (
+  const path = `netflix/series/content`;
+  const createSeries = (
     <CreateTitle titleData={titleData} mediaData={mediaData} path={path} />
   );
+
   // Method
   useEffect(() => {
     async function loadData(path) {
@@ -48,20 +47,24 @@ export default function MoviesAdmin() {
 
   //Components
   const titlesList = titles.map((title) => (
-    <TitleItem key={title.id} title={title} path={path} titleData={titleData} />
+    <SeriesItem
+      key={title.id}
+      title={title}
+      path={path}
+      titleData={titleData}
+    />
   ));
 
   // Safeguards
   if (status === 0) return <p>Loading ⏱</p>;
   if (status === 2) return <p>Error ❌</p>;
-
   return (
     <div>
-      <h2>{categoryId}</h2>
+      <h2>Series</h2>
       <div className="grid">
         {titles.length === 0 && <Placeholder />}
         {titles.length > 0 && titlesList}
-        <button onClick={() => setModal(createMovies)}>Add {categoryId}</button>
+        <button onClick={() => setModal(createSeries)}>Add Series</button>
       </div>
     </div>
   );

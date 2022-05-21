@@ -2,14 +2,14 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 //Project files
-import CreateSeason from "Admin/components/CreateSeason";
-import CreateTitle from "Admin/components/CreateTitle";
+import CreateSeason from "components/admin/CreateSeason";
+import CreateTitle from "components/admin/CreateTitle";
 import { readCollection } from "scripts/firestore";
-import mediaData from "Admin/data/mediaData";
-import Placeholder from "Admin/pages/Placeholder";
-import titleData from "Admin/data/seasonData";
-import SeasonItem from "Admin/components/SeasonItem";
-import SeriesItem from "Admin/components/SeriesItem";
+import mediaData from "data/admin/mediaData";
+import Placeholder from "pages/admin/Placeholder";
+import titleData from "data/admin/seasonData";
+import SeasonItem from "components/admin/SeasonItem";
+import SeriesItem from "components/admin/SeriesItem";
 import { useModal } from "state/ModalContext";
 import { useTitle } from "state/TitleContext";
 
