@@ -1,13 +1,11 @@
 //NPM package
 import { Link } from "react-router-dom";
-import { useParams } from "react-router-dom";
 //Project Files
 import { useModal } from "state/ModalContext";
 import DeleteTitle from "components/admin/DeleteTitle";
 import UpdateTitle from "components/admin/UpdateTitle";
 
 export default function SeriesItem({ title, path, titleData }) {
-  const { categoryId } = useParams();
   //Global state
   const { setModal } = useModal();
   //Properties

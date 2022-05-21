@@ -6,7 +6,6 @@ import InputTitle from "./InputTitle";
 import { updateDocument } from "scripts/firestore";
 import { useTitle } from "state/TitleContext";
 import { useModal } from "state/ModalContext";
-import InputMedia from "./InputMedia";
 
 export default function UpdateSeason({ path, titleData, season }) {
   // Global state

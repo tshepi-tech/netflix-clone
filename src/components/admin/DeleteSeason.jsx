@@ -1,5 +1,4 @@
 //NPM package
-import { useParams } from "react-router-dom";
 import { useState } from "react";
 
 //Project files
@@ -10,7 +9,6 @@ import { useModal } from "state/ModalContext";
 import { useTitle } from "state/TitleContext";
 
 export default function DeleteTitle({ title, path, season }) {
-  const { categoryId } = useParams(); // params doesn't work for modal so when you had `netflix/${categoryId}..etc`the param was undefined!
   //Global state
   const { seasons, setSeasons } = useTitle();
   const { setModal } = useModal();

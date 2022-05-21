@@ -1,6 +1,5 @@
 //NPM package
-import { useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 //Project Files
 import { useModal } from "state/ModalContext";
 import DeleteSeason from "components/admin/DeleteSeason";

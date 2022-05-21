@@ -1,6 +1,5 @@
 //NPM package
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 //Project files
 import CreateTitle from "components/admin/CreateTitle";
 import { readCollection } from "scripts/firestore";

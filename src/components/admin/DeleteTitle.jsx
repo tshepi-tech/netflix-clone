@@ -11,7 +11,6 @@ import { useModal } from "state/ModalContext";
 import { useTitle } from "state/TitleContext";
 
 export default function DeleteTitle({ title, path }) {
-  const { categoryId } = useParams(); // params doesn't work for modal so when you had `netflix/${categoryId}..etc`the param was undefined!
   //Global state
   const { titles, setTitles } = useTitle();
   const { setModal } = useModal();

@@ -3,13 +3,10 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 //Project files
 import CreateSeason from "components/admin/CreateSeason";
-import CreateTitle from "components/admin/CreateTitle";
 import { readCollection } from "scripts/firestore";
-import mediaData from "data/admin/mediaData";
 import Placeholder from "pages/admin/Placeholder";
 import titleData from "data/admin/seasonData";
 import SeasonItem from "components/admin/SeasonItem";
-import SeriesItem from "components/admin/SeriesItem";
 import { useModal } from "state/ModalContext";
 import { useTitle } from "state/TitleContext";
 

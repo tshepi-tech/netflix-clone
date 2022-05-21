@@ -6,7 +6,6 @@ import { createDocumentWithId } from "scripts/firestore";
 import { readDocument } from "scripts/firestore";
 import { useTitle } from "state/TitleContext";
 import InputTitle from "./InputTitle";
-import InputMedia from "./InputMedia";
 import { useModal } from "state/ModalContext";
 
 export default function CreateSeason({ titleData, path }) {
