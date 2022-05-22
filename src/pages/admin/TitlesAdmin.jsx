@@ -5,7 +5,6 @@ import { useParams } from "react-router-dom";
 //Project files
 import CreateTitle from "components/admin/CreateTitle";
 import { readCollection } from "scripts/firestore";
-import mediaData from "data/admin/mediaData";
 import Placeholder from "pages/admin/Placeholder";
 import TitleItem from "components/admin/TitleItem";
 import titleData from "data/admin/titleData";
@@ -23,9 +22,7 @@ export default function MoviesAdmin() {
 
   //Properties
   const path = `netflix/${categoryId}/content`;
-  const createMovies = (
-    <CreateTitle titleData={titleData} mediaData={mediaData} path={path} />
-  );
+  const createMovies = <CreateTitle titleData={titleData} path={path} />;
   // Method
   useEffect(() => {
     async function loadData(path) {

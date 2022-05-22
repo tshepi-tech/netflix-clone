@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 //Project files
 import CreateTitle from "components/admin/CreateTitle";
 import { readCollection } from "scripts/firestore";
-import mediaData from "data/admin/mediaData";
 import Placeholder from "pages/admin/Placeholder";
 import titleData from "data/admin/seriesData";
 import SeriesItem from "components/admin/SeriesItem";
@@ -20,9 +19,7 @@ export default function SeriesAdmin() {
 
   //Properties
   const path = `netflix/series/content`;
-  const createSeries = (
-    <CreateTitle titleData={titleData} mediaData={mediaData} path={path} />
-  );
+  const createSeries = <CreateTitle titleData={titleData} path={path} />;
 
   // Method
   useEffect(() => {
