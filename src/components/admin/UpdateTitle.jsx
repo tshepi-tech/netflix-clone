@@ -2,6 +2,7 @@
 import { useState } from "react";
 
 // Project files
+import data from "data/admin/mediaData";
 import InputTitle from "./InputTitle";
 import { updateDocument } from "scripts/firestore";
 import { useTitle } from "state/TitleContext";
@@ -15,7 +16,6 @@ export default function UpdateTitle({ path, titleData, title }) {
 
   // Local state
   const [form, setForm] = useState(generateFields(titleData, title));
-
   // Methods
   async function onSubmit(event) {
     event.preventDefault();
