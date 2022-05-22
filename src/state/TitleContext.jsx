@@ -37,7 +37,7 @@ export function TitleProvider({ children }) {
     setTitles(clonedTitles);
   }
 
-  function deleteItem(id) {
+  function deleteTitle(id) {
     const filteredTitles = titles.filter((item) => item.id !== id);
 
     setTitles(filteredTitles);

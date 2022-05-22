@@ -12,7 +12,7 @@ import { useTitle } from "state/TitleContext";
 
 export default function DeleteTitle({ title, path }) {
   //Global state
-  const { titles, setTitles } = useTitle();
+  const { deleteTitle } = useTitle();
   const { setModal } = useModal();
 
   //Local state
@@ -23,6 +23,8 @@ export default function DeleteTitle({ title, path }) {
     event.preventDefault();
 
     if (compare === title.name) {
+      await deleteFile(`image-${title.name}-${title.year}.png`);
+      await deleteFile(`thumbnail-${title.name}-${title.year}.png`);
       const done = deleteDocument(path, title.id).catch(onFail);
 
       if (done) onSuccess(title.id);
@@ -32,8 +34,7 @@ export default function DeleteTitle({ title, path }) {
   }
 
   function onSuccess(id) {
-    const filteredTitles = titles.filter((title) => title.id !== id);
-    setTitles(filteredTitles);
+    deleteTitle(id);
     setModal(null);
   }
 
