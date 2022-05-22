@@ -25,13 +25,6 @@ export default function InputMedia() {
 
     setImage(resizedImage);
   }
-  async function onLogoSelect(event) {
-    const file = event.target.files[0];
-    const imageImage = await readFile(file);
-    const resizedImage = await resizeImage(imageImage, 250, 250);
-
-    setLogo(resizedImage);
-  }
 
   return (
     <label className="input-field">
@@ -45,12 +38,6 @@ export default function InputMedia() {
       <input
         type="file"
         onChange={onImageSelect}
-        accept="image/png image/jpg "
-      />
-      <div>Logo:</div>
-      <input
-        type="file"
-        onChange={onLogoSelect}
         accept="image/png image/jpg "
       />
     </label>

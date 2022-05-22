@@ -31,10 +31,6 @@ export default function CreateTitle({ titleData, path }) {
     const filePath2 = path + fileName2;
     const imageURL = await createFile(filePath2, image);
     form.imageURL = imageURL;
-    const fileName3 = `logo-${form.name}-${form.year}.png`;
-    const filePath3 = path + fileName3;
-    const logoURL = await createFile(filePath3, logo);
-    form.logoURL = logoURL;
     const id = textToURL(form.name);
     const existingDocument = await readDocument(path, id).catch(onFail);
 

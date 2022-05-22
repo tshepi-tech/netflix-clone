@@ -6,13 +6,6 @@
     "required": false,
     "type": "file"
   },
-  "logo": {
-    "autofocus": true,
-    "label": "Logo",
-    "placeholder": "upload logo",
-    "required": false,
-    "type": "file"
-  },
   "image": {
     "autofocus": true,
     "label": "Image",
