@@ -1,5 +1,10 @@
 //NPM packages
-import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
+import {
+  getDownloadURL,
+  ref,
+  uploadBytes,
+  deleteObject,
+} from "firebase/storage";
 
 //Project file
 import { cloudStorage } from "./firebase";

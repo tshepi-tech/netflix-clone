@@ -15,6 +15,7 @@ export function TitleProvider({ children }) {
     titles,
     setTitles,
     addTitle,
+    deleteTitle,
     seasons,
     setSeasons,
     addSeasons,

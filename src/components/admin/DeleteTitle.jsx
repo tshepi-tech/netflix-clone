@@ -17,14 +17,16 @@ export default function DeleteTitle({ title, path }) {
 
   //Local state
   const [compare, setCompare] = useState("");
-  const [form, setForm] = useState({});
+
   //Methods
   async function onSubmit(event) {
     event.preventDefault();
+    const fileRef1 = path + `image-${title.name}-${title.year}.png`;
+    const fileRef2 = path + `thumbnail-${title.name}-${title.year}.png`;
 
     if (compare === title.name) {
-      await deleteFile(`image-${title.name}-${title.year}.png`);
-      await deleteFile(`thumbnail-${title.name}-${title.year}.png`);
+      await deleteFile(fileRef1);
+      await deleteFile(fileRef2);
       const done = deleteDocument(path, title.id).catch(onFail);
 
       if (done) onSuccess(title.id);
