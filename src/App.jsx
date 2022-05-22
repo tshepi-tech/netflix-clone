@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 
 //Project files
 import Categories from "pages/admin/Categories";
+import Content from "pages/users/Content";
 import EpisodesAdmin from "pages/admin/EpisodesAdmin";
 import Modal from "components/app/Modal";
 import { ModalProvider } from "state/ModalContext";
@@ -26,6 +27,7 @@ export default function App() {
               path="series/:seriesId/:seasonId"
               element={<EpisodesAdmin />}
             />
+            <Route path="content" element={<Content />} />
           </Routes>
           <Modal />
         </div>
