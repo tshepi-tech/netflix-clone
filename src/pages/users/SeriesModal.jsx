@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 //Project files
 import EpisodesItem from "components/users/EpisodesItem";
 import { readCollection } from "scripts/firestore";
-import SelectField from "components/app/SelectField";
+import SelectField from "components/users/SelectField";
 
 export default function SeriesModal({ title }) {
   const { name, imageURL, age, duration, cast, text, theme, genre, AD, HD } =
