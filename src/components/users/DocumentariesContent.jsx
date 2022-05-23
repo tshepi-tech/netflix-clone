@@ -2,20 +2,19 @@
 import { useEffect, useState } from "react";
 //Project files
 import { readCollection } from "scripts/firestore";
-import Placeholder from "pages/admin/Placeholder";
 import ContentCard from "components/users/ContentCard";
 import { useModal } from "state/ModalContext";
 
-export default function MovieContent() {
+export default function DocumentariesContent() {
   //Global state
   const { setModal } = useModal();
 
   //Local state
-  const [movies, setMovies] = useState([]);
+  const [docs, setDocs] = useState([]);
   const [status, setStatus] = useState(0); // 0: loading, 1: loaded, 2: error
 
   //Properties
-  const path = "netflix/movies/content";
+  const path = "netflix/documentaries/content";
   // Method
   useEffect(() => {
     async function loadData(path) {
@@ -26,18 +25,18 @@ export default function MovieContent() {
   }, []);
 
   function onSuccess(data) {
-    setMovies(data);
+    setDocs(data);
     setStatus(1);
   }
 
   function onFail(error) {
     console.error(error);
     alert("We cannot load the titles. Try again");
-    setMovies(2);
+    setDocs(2);
   }
 
   //Components
-  const MovieList = movies.map((title) => (
+  const DocsList = docs.map((title) => (
     <ContentCard key={title.id} title={title} />
   ));
 
@@ -47,8 +46,8 @@ export default function MovieContent() {
 
   return (
     <div>
-      {movies.length === 0 && "Movies coming soon"}
-      {movies.length > 0 && MovieList}
+      {docs.length === 0 && "Documentaries coming soon"}
+      {docs.length > 0 && DocsList}
     </div>
   );
 }
