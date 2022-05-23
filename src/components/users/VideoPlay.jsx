@@ -1,6 +1,3 @@
-//NPM package
-import { useState } from "react";
-
 //Project files
 import YoutubeEmbed from "components/users/YoutubeEmbed";
 
