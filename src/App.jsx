@@ -10,6 +10,7 @@ import { ModalProvider } from "state/ModalContext";
 import TitlesAdmin from "pages/admin/TitlesAdmin";
 import SeasonsAdmin from "pages/admin/SeasonsAdmin";
 import SeriesAdmin from "pages/admin/SeriesAdmin";
+import Signup from "pages/users/Signup";
 import "styles/styles.css";
 import { TitleProvider } from "state/TitleContext";
 
@@ -19,6 +20,7 @@ export default function App() {
       <TitleProvider>
         <div className="App">
           <Routes>
+            <Route path="signup" element={<Signup />} />
             <Route path="categories" element={<Categories />} />
             <Route path="categories/series" element={<SeriesAdmin />} />
             <Route path="categories/:categoryId" element={<TitlesAdmin />} />
