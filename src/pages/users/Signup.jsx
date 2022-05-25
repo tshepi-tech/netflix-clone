@@ -18,7 +18,6 @@ export default function Signup() {
 
   //Local state
   const [email, setEmail] = useState("tshepi.lehutjo@gmail.com");
-  // const [password, setPassword] = useState("12345abcd");
   const [password, setPassword] = useState("");
   useEffect(() => {
     const loggedInUser = localStorage.getItem(uid);

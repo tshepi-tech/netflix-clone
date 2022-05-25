@@ -17,6 +17,7 @@ import { TitleProvider } from "state/TitleContext";
 import Unlogged from "Routes/Unlogged";
 import Users from "Routes/Users";
 import { useUID } from "state/UIDContext";
+import { UserRoleProvider } from "state/UserRolesContext";
 
 export default function App() {
   //Global state
@@ -25,12 +26,14 @@ export default function App() {
   return (
     <ModalProvider>
       <TitleProvider>
-        <div className="App">
-          {!uid && !uidAdmin && <Unlogged />}
-          {uidAdmin && <Admin />}
-          {uid && <Users />}
-          <Modal />
-        </div>
+        <UserRoleProvider>
+          <div className="App">
+            {!uid && !uidAdmin && <Unlogged />}
+            {uidAdmin && <Admin />}
+            {uid && <Users />}
+            <Modal />
+          </div>
+        </UserRoleProvider>
       </TitleProvider>
     </ModalProvider>
   );
