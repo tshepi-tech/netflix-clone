@@ -15,8 +15,8 @@ import { useUID } from "state/UIDContext";
 
 export default function Login({ uidState, adminState }) {
   const navigation = useNavigate();
-  const { setUID } = useUID;
-  const { setUIDadmin } = useUID;
+  const { setUID } = useUID();
+  const { setUIDadmin } = useUID();
   const { users, setUsers } = useUserRole();
 
   const [email, setEmail] = useState("");
