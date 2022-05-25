@@ -1,1 +1,10 @@
 @import url(modal.css);
+@import url(Signup.css);
+
+@import url(base/layout.css);
+@import url(base/variables.css);
+@import url(base/swatches.css);
+
+@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Martel+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");

@@ -1,0 +1,14 @@
+/*Colors*/
+:root {
+  --color-primary: var(--swatch-red);
+  --color_text: white;
+}
+/* Space */
+:root {
+  --space-small: 8px;
+  --space-medium: 16px;
+  --space-big: 24px;
+  --space-ultra: 48px;
+}
+
+/* Other */

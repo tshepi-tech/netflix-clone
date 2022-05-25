@@ -6,7 +6,7 @@
   },
   "password": {
     "label": "Password",
-    "placeholder": "********",
+    "placeholder": "Password",
     "type": "password"
   }
 }

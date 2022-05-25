@@ -1,0 +1,127 @@
+.hero {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url(https://assets.nflxext.com/ffe/siteui/vlv3/a1dc92ca-091d-4ca9-a05b-8cd44bbfce6a/f9368347-e982-4856-a5a4-396796381f28/RS-en-20191230-popsignuptwoweeks-perspective_alpha_website_large.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  min-height: 100px;
+  align-items: center;
+  position: relative;
+  background-color: transparent;
+  align-self: center;
+}
+
+.navbar img {
+  margin: 0 50px;
+  width: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+}
+/* .navbar__logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+} */
+
+.navbar__signin button {
+  background-color: var(--color-primary);
+  color: white;
+  font-family: netflixThin;
+  font-size: 14px;
+  padding: 8px 18px;
+  position: absolute;
+  top: 32px;
+  right: 80px;
+  border-radius: 3px;
+}
+
+.main {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+.landing {
+  position: absolute;
+  top: 58px;
+  color: white;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 70px;
+}
+
+.landing h1 {
+  font-family: netflixRegular;
+  font-size: 54px;
+  line-height: 1;
+  width: 780px;
+}
+.landing h3 {
+  font-family: netflixLight;
+  margin-top: var(--space-medium);
+  font-size: 26px;
+  font-weight: normal;
+  letter-spacing: 0.8px;
+}
+.landing p {
+  font-family: netflixLight;
+  font-size: 18px;
+  margin-top: var(--space-big);
+  font-weight: normal;
+  letter-spacing: 0.8px;
+}
+
+.signup__form {
+  width: 640px;
+  display: flex;
+  flex-direction: row;
+  margin-top: var(--space-big);
+}
+
+.input__auth {
+  height: 60px;
+  width: 360px;
+  margin-right: 3px;
+}
+
+.getStarted {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  background-color: var(--color-primary);
+  color: white;
+  width: 250px;
+  /* min-height: 70px;
+   */
+  font-size: 30px;
+}
+.getStarted p {
+  position: absolute;
+  font-family: netflixLight;
+  font-size: 24px;
+  bottom: 12px;
+}

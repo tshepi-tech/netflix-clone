@@ -1,0 +1,71 @@
+@font-face {
+  font-family: "SansBlack";
+  src: url("assets/fonts/netflixsansblack-webfont.woff");
+}
+
+@font-face {
+  font-family: netflixBold;
+  src: url("assets/fonts/netflixsansbold-webfont.woff");
+}
+
+@font-face {
+  font-family: netflixLight;
+  src: url("assets/fonts/netflixsanslight-webfont.woff");
+}
+
+@font-face {
+  font-family: netflixRegular;
+  src: url("assets/fonts/netflixsansregular-webfont.woff");
+}
+
+@font-face {
+  font-family: netflixThin;
+  src: url("assets/fonts/netflixsansthin-webfont.woff");
+}
+@font-face {
+  font-family: netflixMedium;
+  src: url("assets/fonts/netflixsansmedium-webfont.woff");
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+
+  box-sizing: border-box;
+}
+
+App {
+  padding: var(--space-big);
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Roboto", sans-serif;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+input {
+  font: inherit;
+  border: none;
+}
+
+button {
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  background-color: initial;
+  outline: none;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

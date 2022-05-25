@@ -1,10 +1,12 @@
 //NPM packages
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 //Project files
-import InputField from "components/app/InputField";
 import form from "data/users/signupForm.json";
+import logo from "assets/brand/main_logo.png";
+import Input from "components/users/Input";
 import { createUser } from "scripts/firebaseAuth";
 import { createDocumentWithId } from "scripts/firestore";
 import { useUID } from "state/UIDContext";
@@ -16,8 +18,8 @@ export default function Signup() {
 
   //Local state
   const [email, setEmail] = useState("tshepi.lehutjo@gmail.com");
-  const [password, setPassword] = useState("12345abcd");
-
+  // const [password, setPassword] = useState("12345abcd");
+  const [password, setPassword] = useState("");
   useEffect(() => {
     const loggedInUser = localStorage.getItem(uid);
     if (loggedInUser) {
@@ -41,16 +43,35 @@ export default function Signup() {
   }
   return (
     <div>
-      <h1>Unlimited films, TV programmes and more.</h1>
-      <h2>Watch anywhere. Cancel at any time.</h2>
-      <p>
-        Ready to watch? Enter your email to create or restart your membership.
-      </p>
-      <form onSubmit={onSignup}>
-        <InputField setup={form.email} state={[email, setEmail]} />
-        <InputField setup={form.password} state={[password, setPassword]} />
-        <button>Submit</button>
-      </form>
+      <section className="hero">
+        <div className="navbar">
+          <img src={logo} alt="Netflix logo" />
+          <Link className="navbar__signin" to="/login">
+            <button>Sign In</button>
+          </Link>
+        </div>
+        <section className="main">
+          <div className="landing">
+            <h1>Unlimited films, TV programmes and more.</h1>
+            <h3>Watch anywhere. Cancel at any time.</h3>
+            <p>
+              Ready to watch? Enter your email to create or restart your
+              membership.
+            </p>
+            <form className="signup__form" onSubmit={onSignup}>
+              <Input
+                className="input"
+                setup={form.email}
+                state={[email, setEmail]}
+              />
+              <Input setup={form.password} state={[password, setPassword]} />
+              <button className="getStarted">
+                <p>Get Started</p>
+              </button>
+            </form>
+          </div>
+        </section>
+      </section>
     </div>
   );
 }
