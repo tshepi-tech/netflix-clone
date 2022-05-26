@@ -2,7 +2,7 @@ import React from "react";
 
 //NPM packages
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 //Project files
 import Input from "components/users/Input";
@@ -56,14 +56,21 @@ export default function Login({ uidState, adminState }) {
 
   return (
     <div>
-      <h1>Welcome back</h1>
-      <div className="form-content">
-        <form onSubmit={onLogin}>
-          <Input setup={form.email} state={[email, setEmail]} />
-          <Input setup={form.password} state={[password, setPassword]} />
-          <button>Submit</button>
-        </form>
-      </div>
+      <section className="hero">
+        <img className="logo" src={logo} alt="Netflix logo" />
+        <div className="form__content">
+          <h2>Sign In</h2>
+          <form className="login__form" onSubmit={onLogin}>
+            <Input setup={form.email} state={[email, setEmail]} />
+            <Input setup={form.password} state={[password, setPassword]} />
+            <button>Sign In</button>
+          </form>
+          <p className="new">New to Netflix? </p>
+          <Link to="/signup">
+            <p className="signin__link">Sign up now.</p>
+          </Link>
+        </div>
+      </section>
     </div>
   );
 }

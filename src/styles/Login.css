@@ -1,0 +1,58 @@
+.form__content {
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 660px;
+  width: 460px;
+  border-radius: 8px;
+  position: absolute;
+  right: 780px;
+  font-family: netflixRegular;
+}
+
+.login__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login__form Input {
+  height: 52px;
+  width: 360px;
+  border-radius: 3px;
+  margin-right: 3px;
+  margin-top: var(--space-small);
+  margin-bottom: 6px;
+  margin-left: var(--space-ultra);
+  background-color: rgb(56, 56, 56);
+}
+.login__form button {
+  border-radius: 3px;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: var(--color-primary);
+  color: white;
+  width: 360px;
+  height: var(--space-ultra);
+  font-size: var(--space-medium);
+  font-family: netflixRegular;
+  margin: var(--space-ultra) var(--space-ultra);
+}
+.new {
+  margin-left: var(--space-ultra);
+  display: inline;
+  color: rgb(104, 104, 104);
+}
+.form__content h2 {
+  font-family: netflixRegular;
+  color: white;
+  font-size: 32px;
+  margin-left: var(--space-ultra);
+  margin-top: 40px;
+  margin-bottom: var(--space-small);
+}
+
+.signin__link {
+  display: inline;
+  color: white;
+}

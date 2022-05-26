@@ -1,7 +1,7 @@
 {
   "email": {
     "label": "E-mail",
-    "placeholder": "Ex: sally@yahoo.com",
+    "placeholder": "Email",
     "type": "email"
   },
   "password": {

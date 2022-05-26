@@ -44,7 +44,7 @@ export default function Signup() {
     <div>
       <section className="hero">
         <div className="navbar">
-          <img src={logo} alt="Netflix logo" />
+          <img className="logo" src={logo} alt="Netflix logo" />
           <Link className="navbar__signin" to="/login">
             <button>Sign In</button>
           </Link>
@@ -58,12 +58,12 @@ export default function Signup() {
               membership.
             </p>
             <form className="signup__form" onSubmit={onSignup}>
+              <Input setup={form.email} state={[email, setEmail]} />
               <Input
-                className="input"
-                setup={form.email}
-                state={[email, setEmail]}
+                input_auth
+                setup={form.password}
+                state={[password, setPassword]}
               />
-              <Input setup={form.password} state={[password, setPassword]} />
               <button className="getStarted">
                 <p>Get Started</p>
               </button>

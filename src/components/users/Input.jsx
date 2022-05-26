@@ -4,7 +4,6 @@ export default function InputField({ setup, state }) {
 
   return (
     <input
-      className="input__auth"
       type={type}
       placeholder={placeholder}
       value={value}
