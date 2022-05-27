@@ -8,6 +8,8 @@ import { updateDocument } from "scripts/firestore";
 import { useTitle } from "state/TitleContext";
 import { useModal } from "state/ModalContext";
 import InputMedia from "./InputMedia";
+import readFile from "scripts/ModifyImage/readFile";
+import resizeImage from "scripts/ModifyImage/resizeImage";
 
 export default function UpdateTitle({ path, titleData, title }) {
   // Global state
@@ -16,6 +18,8 @@ export default function UpdateTitle({ path, titleData, title }) {
 
   // Local state
   const [form, setForm] = useState(generateFields(titleData, title));
+  const [thumbnail, setThumbnail] = useState(title.thmbnailURL);
+  const [image, setImage] = useState(title.imageURL);
   // Methods
   async function onSubmit(event) {
     event.preventDefault();
@@ -39,7 +43,6 @@ export default function UpdateTitle({ path, titleData, title }) {
   function generateFields(fields, data) {
     const result = {};
 
-    // REFACTOR ME PLEASE!!!
     for (let i = 0; i < fields.length; i++) {
       const key = fields[i].key;
 
@@ -53,11 +56,29 @@ export default function UpdateTitle({ path, titleData, title }) {
     <InputTitle key={item.key} setup={item} state={[form, setForm]} />
   ));
 
+  async function onThumbnailSelect(event) {
+    const thumbnail = event.target.files[0];
+    const imageImage = await readFile(thumbnail);
+    const resizedImage = await resizeImage(imageImage, 250, 250);
+
+    setThumbnail(resizedImage);
+  }
+  async function onImageSelect(event) {
+    const image = event.target.files[0];
+    const imageImage = await readFile(image);
+    const resizedImage = await resizeImage(imageImage, 250, 250);
+
+    setImage(resizedImage);
+  }
+
   return (
     <form className="form" onSubmit={onSubmit}>
       <h2>Edit item</h2>
       {InputFields}
-      <InputMedia />
+      <div>Thumbnail:</div>
+      <input type="file" onChange={onThumbnailSelect} accept="image/* " />
+      <div>Image:</div>
+      <input type="file" onChange={onImageSelect} accept="image/*" />
       <button className="button primary">Edit existing item</button>
       <button className="button secondary" onClick={() => setModal(null)}>
         Cancel editing

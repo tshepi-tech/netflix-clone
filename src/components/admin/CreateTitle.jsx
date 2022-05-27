@@ -8,7 +8,6 @@ import { readDocument } from "scripts/firestore";
 import textToURL from "scripts/textToURL";
 import { useTitle } from "state/TitleContext";
 import InputTitle from "./InputTitle";
-import InputMedia from "./InputMedia";
 import readFile from "scripts/ModifyImage/readFile";
 
 import resizeImage from "scripts/ModifyImage/resizeImage";
@@ -23,7 +22,6 @@ export default function CreateTitle({ titleData, path }) {
   const [form, setForm] = useState({});
   const [thumbnail, setThumbnail] = useState(null);
   const [image, setImage] = useState(null);
-  const [logo, setLogo] = useState(null);
 
   async function onSubmit(event) {
     event.preventDefault();
