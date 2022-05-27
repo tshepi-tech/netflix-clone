@@ -43,7 +43,7 @@ export default function SeriesContent() {
 
   return (
     <div>
-      {series.length === 0 && <Placeholder />}
+      {series.length === 0 && "Series coming soon"}
       {series.length > 0 && SeriesList}
     </div>
   );
