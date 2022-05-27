@@ -9,6 +9,10 @@ import textToURL from "scripts/textToURL";
 import { useTitle } from "state/TitleContext";
 import InputTitle from "./InputTitle";
 import InputMedia from "./InputMedia";
+import readFile from "scripts/ModifyImage/readFile";
+
+import resizeImage from "scripts/ModifyImage/resizeImage";
+
 import { useModal } from "state/ModalContext";
 
 export default function CreateTitle({ titleData, path }) {
@@ -57,6 +61,21 @@ export default function CreateTitle({ titleData, path }) {
     alert("Could not create `${form.name}` title");
   }
 
+  async function onThumbnailSelect(event) {
+    const thumbnail = event.target.files[0];
+    const imageImage = await readFile(thumbnail);
+    const resizedImage = await resizeImage(imageImage, 250, 250);
+
+    setThumbnail(resizedImage);
+  }
+  async function onImageSelect(event) {
+    const image = event.target.files[0];
+    const imageImage = await readFile(image);
+    const resizedImage = await resizeImage(imageImage, 250, 250);
+
+    setImage(resizedImage);
+  }
+
   // Components
   const InputFields = titleData.map((item) => (
     <InputTitle key={item.key} setup={item} state={[form, setForm]} />
@@ -66,7 +85,10 @@ export default function CreateTitle({ titleData, path }) {
     <form className="form" onSubmit={onSubmit}>
       <h2>Create Title</h2>
       {InputFields}
-      <InputMedia />
+      <div>Thumbnail:</div>
+      <input type="file" onChange={onThumbnailSelect} accept="image/* " />
+      <div>Image:</div>
+      <input type="file" onChange={onImageSelect} accept="image/*" />
       <button className="button primary">Submit</button>
       <button
         className="button secondary"

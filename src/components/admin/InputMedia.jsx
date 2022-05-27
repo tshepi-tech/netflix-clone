@@ -12,15 +12,15 @@ export default function InputMedia() {
 
   // Methods
   async function onThumbnailSelect(event) {
-    const file = event.target.files[0];
-    const imageImage = await readFile(file);
+    const thumbnail = event.target.files[0];
+    const imageImage = await readFile(thumbnail);
     const resizedImage = await resizeImage(imageImage, 250, 250);
 
     setThumbnail(resizedImage);
   }
   async function onImageSelect(event) {
-    const file = event.target.files[0];
-    const imageImage = await readFile(file);
+    const image = event.target.files[0];
+    const imageImage = await readFile(image);
     const resizedImage = await resizeImage(imageImage, 250, 250);
 
     setImage(resizedImage);
@@ -29,17 +29,9 @@ export default function InputMedia() {
   return (
     <label className="input-field">
       <div>Thumbnail:</div>
-      <input
-        type="file"
-        onChange={onThumbnailSelect}
-        accept="image/png image/jpg "
-      />
+      <input type="file" onChange={onThumbnailSelect} accept="image/* " />
       <div>Image:</div>
-      <input
-        type="file"
-        onChange={onImageSelect}
-        accept="image/png image/jpg "
-      />
+      <input type="file" onChange={onImageSelect} accept="image/*" />
     </label>
   );
 }

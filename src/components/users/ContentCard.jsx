@@ -8,7 +8,7 @@ export default function ContentCard({ title }) {
   return (
     <div>
       <button onClick={() => setModal(<TitleModal title={title} />)}>
-        <img src={title.imageURL} alt="title-thumbnail" />
+        <img src={title.thmbnailURL} alt="title-thumbnail" />
         <br></br>
         {title.name}
       </button>

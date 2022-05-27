@@ -16,6 +16,8 @@ export default function TitleModal({ title }) {
     HD,
     URL,
   } = title;
+
+  console.log(imageURL);
   //Global state
   const { setModal } = useModal();
   return (
