@@ -1,0 +1,35 @@
+.title__modal {
+  position: relative;
+  color: white;
+  height: 1040px;
+  border-radius: 12px;
+}
+
+.play__title {
+  position: absolute;
+
+  color: black;
+  width: 140px;
+  height: 32px;
+  border-radius: 3px;
+  font-family: netflixBold;
+  font-size: 16px;
+  background-color: white;
+  left: 50px;
+  top: 420px;
+}
+
+.main__image {
+  border-radius: 12px;
+  width: 980px;
+  height: 480px;
+  object-fit: cover;
+}
+.container2 {
+  width: 420px;
+  margin-right: 15px;
+}
+.description__all {
+  display: flex;
+  flex-direction: row;
+}

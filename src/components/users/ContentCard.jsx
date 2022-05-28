@@ -3,15 +3,14 @@ import { useModal } from "state/ModalContext";
 import TitleModal from "./TitleModal";
 
 export default function ContentCard({ title }) {
+  const { thmbnailURL } = title;
   //Global state
   const { setModal } = useModal();
   return (
-    <div>
+    <section className="content__card">
       <button onClick={() => setModal(<TitleModal title={title} />)}>
-        <img src={title.thmbnailURL} alt="title-thumbnail" />
-        <br></br>
-        {title.name}
+        <img src={thmbnailURL} alt="title-thumbnail" />
       </button>
-    </div>
+    </section>
   );
 }

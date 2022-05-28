@@ -1,0 +1,80 @@
+/*ContentCard.jsx*/
+
+.content__card {
+}
+
+.content__card img {
+  object-fit: contain;
+  border-radius: 3px;
+}
+/*Content.jsx*/
+.navigation {
+  background-color: black;
+  position: relative;
+}
+.navigation img {
+  height: 70px;
+  width: auto;
+  margin-left: 50px;
+}
+
+.content__page {
+  position: relative;
+}
+
+.header {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url(assets/images/ModernFamily.webp);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.play {
+  color: black;
+  width: 140px;
+  height: 56px;
+  border-radius: 3px;
+  font-family: netflixBold;
+  font-size: 20px;
+  background-color: white;
+  position: absolute;
+  bottom: 380px;
+  left: 80px;
+}
+.more__info {
+  width: 190px;
+  height: 56px;
+  border-radius: 3px;
+  font-family: netflixBold;
+  background-color: rgba(104, 104, 104, 0.85);
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  bottom: 380px;
+  left: 240px;
+}
+
+.movies {
+  font-family: netflixBold;
+  color: white;
+  position: absolute;
+  left: 64px;
+  top: 960px;
+}
+
+.movieList {
+  position: absolute;
+  left: 60px;
+  top: 1000px;
+}
+
+/*MovieContent.jsx*/
+.movie__page {
+  display: flex;
+  flex-direction: row;
+}

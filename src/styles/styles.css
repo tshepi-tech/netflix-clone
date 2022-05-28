@@ -1,6 +1,8 @@
+@import url(contentPage.css);
 @import url(modal.css);
 @import url(Signup.css);
 @import url(Login.css);
+@import url(TitleModal.css);
 
 @import url(base/layout.css);
 @import url(base/variables.css);

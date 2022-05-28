@@ -28,7 +28,7 @@
     "autofocus": true,
     "label": "Cast",
     "placeholder": "Lupita Nyango,Viola Davis",
-    "required": true,
+    "required": false,
     "type": "text"
   },
   {

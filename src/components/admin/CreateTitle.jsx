@@ -62,7 +62,7 @@ export default function CreateTitle({ titleData, path }) {
   async function onThumbnailSelect(event) {
     const thumbnail = event.target.files[0];
     const imageImage = await readFile(thumbnail);
-    const resizedImage = await resizeImage(imageImage, 250, 250);
+    const resizedImage = await resizeImage(imageImage, 310, 168);
 
     setThumbnail(resizedImage);
   }

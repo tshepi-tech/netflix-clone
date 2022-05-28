@@ -46,9 +46,9 @@ export default function MovieContent() {
   if (status === 2) return <p>Error ❌</p>;
 
   return (
-    <div>
+    <section className="movie__page">
       {movies.length === 0 && "Movies coming soon"}
       {movies.length > 0 && MovieList}
-    </div>
+    </section>
   );
 }
