@@ -45,9 +45,9 @@ export default function DocumentariesContent() {
   if (status === 2) return <p>Error ❌</p>;
 
   return (
-    <div>
+    <secion className="docs__page">
       {docs.length === 0 && "Documentaries coming soon"}
       {docs.length > 0 && DocsList}
-    </div>
+    </secion>
   );
 }

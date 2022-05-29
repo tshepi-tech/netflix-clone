@@ -13,7 +13,7 @@ export default function SeriesItem({ title, path, titleData }) {
 
   return (
     <article>
-      <p>{title.name}</p>
+      <p className="series__title">{title.name}</p>
       <button
         onClick={() =>
           setModal(

@@ -1,0 +1,59 @@
+.episode__number {
+  font-family: netflixRegular;
+  font-size: 24px;
+  height: 60px;
+  padding-top: 20px;
+}
+.episode__img {
+  width: 160px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 3px;
+  margin-left: var(--space-medium);
+}
+
+.episode__item {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: var(--space-ultra);
+  margin-left: var(--space-ultra);
+}
+.episode__name {
+  font-family: netflixBold;
+}
+.episode__duration {
+  font-family: netflixRegular;
+  margin-left: 420px;
+}
+.episode__text {
+  font-family: netflixRegular;
+  line-height: 1.2;
+  width: 600px;
+}
+
+.episode__info {
+  margin-left: var(--space-ultra);
+}
+
+.container1__episode {
+  margin-bottom: var(--space-small);
+  display: flex;
+  flex-direction: row;
+}
+
+/*SelectField*/
+
+.seasons {
+  font-family: netflixBold;
+  font-size: var(--space-medium);
+  color: white;
+  text-align: center;
+  border-radius: 6px;
+  background-color: rgba(104, 104, 104, 0.5);
+  border: 2px solid rgba(104, 104, 104, 0.8);
+  width: 160px;
+  height: 42px;
+  margin-top: var(--space-small);
+  margin-bottom: var(--space-big);
+  margin-left: 720px;
+}

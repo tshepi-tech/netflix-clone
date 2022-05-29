@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 
 export default function Categories() {
   return (
-    <div>
-      <Link to="documentaries">documentaries</Link>
+    <div className="categories">
+      <Link to="documentaries">Documentaries</Link>
       <br></br>
-      <Link to="movies">movies</Link>
+      <Link to="movies">Movies</Link>
       <br></br>
-      <Link to="series">series</Link>
+      <Link to="series">Series</Link>
     </div>
   );
 }

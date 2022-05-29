@@ -8,8 +8,9 @@ export default function TitleItem({ title, path, titleData }) {
   const { setModal } = useModal();
 
   return (
-    <article>
-      <p>{title.name}</p>
+    <article className="admin__title">
+      <img title={title.thmbnail} />
+      <p className="title__name">{title.name}</p>
       <button
         onClick={() =>
           setModal(

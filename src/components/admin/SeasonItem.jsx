@@ -14,7 +14,7 @@ export default function SeriesItem({ seriesId, path, season, titleData }) {
 
   return (
     <article>
-      <p>season :{season.season}</p>
+      <p className="season__label">season :{season.season}</p>
       <button
         onClick={() =>
           setModal(

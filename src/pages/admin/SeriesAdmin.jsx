@@ -56,7 +56,7 @@ export default function SeriesAdmin() {
   if (status === 2) return <p>Error ❌</p>;
   return (
     <div>
-      <h2>Series</h2>
+      <h2 className="series__admin">Series</h2>
       <div className="grid">
         {titles.length === 0 && <Placeholder />}
         {titles.length > 0 && titlesList}

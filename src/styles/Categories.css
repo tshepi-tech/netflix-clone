@@ -1,0 +1,46 @@
+.categories {
+  font-family: netflixRegular;
+  font-size: var(--space-big);
+}
+
+/*TitleItem*/
+.admin__title button {
+  border-radius: 6px;
+  margin-right: 8px;
+}
+
+/*TitlesAdmin*/
+
+.grid button {
+  border-radius: 6px;
+
+  margin-top: 8px;
+  height: 48px;
+  width: 96px;
+  color: black;
+  background-color: red;
+}
+
+/*Create Title*/
+.form h2,
+p {
+  color: white;
+}
+
+/*seriesadmin*/
+
+.series__title,
+.title__name,
+.placeholder {
+  color: black;
+}
+
+/*seasonItem*/
+
+.season__label {
+  color: black;
+}
+
+.series__card {
+  border-radius: 3px;
+}

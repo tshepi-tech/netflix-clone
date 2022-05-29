@@ -42,9 +42,9 @@ export default function SeriesContent() {
   if (status === 2) return <p>Error ❌</p>;
 
   return (
-    <div>
+    <section className="series__page">
       {series.length === 0 && "Series coming soon"}
       {series.length > 0 && SeriesList}
-    </div>
+    </section>
   );
 }

@@ -74,7 +74,9 @@
 }
 
 /*MovieContent.jsx*/
-.movie__page {
+.movie__page,
+.docs__page,
+.series__page {
   display: flex;
   flex-direction: row;
 }

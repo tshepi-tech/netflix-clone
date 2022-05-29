@@ -20,7 +20,7 @@ export default function Login({ uidState, adminState }) {
   const { users, setUsers } = useUserRole();
 
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [password, setPassword] = useState("12345abcd");
 
   useEffect(() => {
     async function loadData(path) {

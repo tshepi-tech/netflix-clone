@@ -5,7 +5,7 @@ export default function Placeholder() {
   return (
     <article>
       <img src={emptyTV} alt="A TV with wave lines on screen" />
-      <p>There is no content yet. Please add</p>
+      <p className="placeholder">There is no content yet. Please add</p>
     </article>
   );
 }

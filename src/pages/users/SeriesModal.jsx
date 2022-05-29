@@ -7,8 +7,19 @@ import { readCollection } from "scripts/firestore";
 import SelectField from "components/users/SelectField";
 
 export default function SeriesModal({ title }) {
-  const { name, imageURL, age, duration, cast, text, theme, genre, AD, HD } =
-    title;
+  const {
+    year,
+    name,
+    imageURL,
+    age,
+    duration,
+    cast,
+    text,
+    theme,
+    genre,
+    AD,
+    HD,
+  } = title;
 
   //Local state
   const [count, setCount] = useState([]);
@@ -43,23 +54,34 @@ export default function SeriesModal({ title }) {
     loadData(episodePath);
   }, []);
 
-  const EpisodeList = episodes.map((episode) => (
-    <EpisodesItem key={episode.id} episode={episode} />
-  ));
-
   return (
-    <div>
-      <img src={imageURL} />
-      <p>{age}</p>
-      {duration}
-      <p>{seasonCount} Seasons</p>
-      <h1>{name}</h1>
-      <p>{text}</p>
-      <p>Cast: {cast}</p>
-      <p>Genre: {genre}</p>
-      <p>This show is :{theme}</p>
+    <section className="title__modal">
+      <img className="main__image" src={imageURL} />
+      <div className="title__info">
+        <section className="description__all">
+          <div className="container1">
+            <span className="year">{year}</span>
+            <span className="age">{age}</span>
+            <span className="duration">{seasonCount} Seasons</span>
+          </div>
+          <div className="container2">
+            <p className="description">{text}</p>
+          </div>
+        </section>
+        <div className="container3">
+          <span>
+            <p className="detail">Cast:</p> <p className="detail2">{cast}</p>
+          </span>
+          <span className="genre">
+            <p className="detail">Genre:</p> <p className="detail2"> {genre}</p>
+          </span>
+          <span className="theme">
+            <p className="detail">This show is: </p>
+            <p className="detail2">{theme}</p>
+          </span>
+        </div>
+      </div>
       <SelectField title={title} />
-      {/* {EpisodeList} */}
-    </div>
+    </section>
   );
 }

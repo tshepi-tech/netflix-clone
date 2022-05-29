@@ -69,7 +69,7 @@ export default function CreateTitle({ titleData, path }) {
   async function onImageSelect(event) {
     const image = event.target.files[0];
     const imageImage = await readFile(image);
-    const resizedImage = await resizeImage(imageImage, 250, 250);
+    const resizedImage = await resizeImage(imageImage, 980, 480);
 
     setImage(resizedImage);
   }
@@ -83,9 +83,9 @@ export default function CreateTitle({ titleData, path }) {
     <form className="form" onSubmit={onSubmit}>
       <h2>Create Title</h2>
       {InputFields}
-      <div>Thumbnail:</div>
+      <p>Thumbnail:</p>
       <input type="file" onChange={onThumbnailSelect} accept="image/* " />
-      <div>Image:</div>
+      <p>Image:</p>
       <input type="file" onChange={onImageSelect} accept="image/*" />
       <button className="button primary">Submit</button>
       <button
