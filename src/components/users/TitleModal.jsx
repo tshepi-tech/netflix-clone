@@ -20,7 +20,6 @@ export default function TitleModal({ title }) {
     year,
   } = title;
 
-  console.log(imageURL);
   //Global state
   const { setModal } = useModal();
   return (

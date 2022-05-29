@@ -2,7 +2,6 @@
 import YoutubeEmbed from "components/users/YoutubeEmbed";
 
 export default function VideoPlay({ URL }) {
-  //   const [videoUrl, setVideoUrl] = useState("");
   const videoUrl = URL;
   let videoCode;
   if (videoUrl) {
@@ -10,7 +9,6 @@ export default function VideoPlay({ URL }) {
   }
   return (
     <div className="App">
-      {/* <input value={videoUrl} onChange={(e) => setVideoUrl(e.target.value)} /> */}
       <YoutubeEmbed embedId={videoCode} />
     </div>
   );
