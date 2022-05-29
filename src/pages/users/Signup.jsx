@@ -17,7 +17,7 @@ export default function Signup() {
   const { uid, setUID } = useUID();
 
   //Local state
-  const [email, setEmail] = useState("tshepi.lehutjo@gmail.com");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   useEffect(() => {
     const loggedInUser = localStorage.getItem(uid);

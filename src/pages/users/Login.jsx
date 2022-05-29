@@ -13,14 +13,14 @@ import { readCollection } from "scripts/firestore";
 import { useUserRole } from "state/UserRolesContext";
 import { useUID } from "state/UIDContext";
 
-export default function Login({ uidState, adminState }) {
+export default function Login() {
   const navigation = useNavigate();
   const { setUID } = useUID();
   const { setUIDadmin } = useUID();
   const { users, setUsers } = useUserRole();
 
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("12345abcd");
+  const [password, setPassword] = useState("");
 
   useEffect(() => {
     async function loadData(path) {
